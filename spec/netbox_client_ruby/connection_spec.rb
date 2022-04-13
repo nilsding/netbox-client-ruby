@@ -45,8 +45,8 @@ describe NetboxClientRuby::Connection do
     end
 
     it 'sets the adapter' do
-      expect(NetboxClientRuby::Connection.new.builder.handlers)
-        .to include Faraday::Adapter::NetHttp
+      expect(NetboxClientRuby::Connection.new.builder.adapter)
+        .to eq Faraday::Adapter::NetHttp
     end
 
     it 'adds the json middleware' do
@@ -65,8 +65,8 @@ describe NetboxClientRuby::Connection do
     end
 
     it 'sets the adapter' do
-      expect(NetboxClientRuby::Connection.new.builder.handlers)
-        .to include Faraday::Adapter::NetHttpPersistent
+      expect(NetboxClientRuby::Connection.new.builder.adapter)
+        .to eq Faraday::Adapter::NetHttpPersistent
     end
   end
 
